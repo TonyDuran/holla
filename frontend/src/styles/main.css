@@ -1,0 +1,352 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+}
+
+/* Login Container */
+.login-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #4A90E2 0%, #357ABD 100%);
+  min-height: 100vh;
+  padding: 2rem;
+  gap: 3rem;
+}
+
+.login-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.login-logo img {
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+  filter: drop-shadow(0 4px 15px rgba(0, 0, 0, 0.2));
+}
+
+.login-tagline {
+  color: white;
+  font-size: 1.1rem;
+  text-align: center;
+  max-width: 300px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.login-box {
+  background: white;
+  padding: 3rem 2.5rem;
+  border-radius: 8px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 400px;
+  flex-shrink: 0;
+}
+
+.login-box h1 {
+  text-align: left;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color: #000;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.login-box input {
+  width: 100%;
+  padding: 0.9rem;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  color: #333;
+  font-size: 0.95rem;
+  border-radius: 4px;
+}
+
+.login-box input::placeholder {
+  color: #999;
+}
+
+.login-box input:focus {
+  outline: none;
+  border-color: #4A90E2;
+  background-color: white;
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+}
+
+.login-box button[type='submit'] {
+  width: 100%;
+  padding: 0.9rem;
+  background-color: #4A90E2;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.login-box button[type='submit']:hover:not(:disabled) {
+  background-color: #357ABD;
+  box-shadow: 0 4px 12px rgba(74, 144, 226, 0.3);
+}
+
+.login-box button[type='submit']:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.toggle-auth {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.link-button {
+  background: none;
+  border: none;
+  color: #4A90E2;
+  cursor: pointer;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.error {
+  color: #357ABD;
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* Main App */
+.main-container {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(135deg, #4A90E2 0%, #357ABD 100%);
+}
+
+.sidebar {
+  width: 280px;
+  background-color: #f0f0f0;
+  border-right: 2px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.user-info {
+  padding: 1rem;
+  border-bottom: 2px solid #ddd;
+  background-color: #e8e8e8;
+}
+
+.username {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.logout-btn {
+  width: 100%;
+  padding: 0.5rem;
+  background-color: #4A90E2;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.logout-btn:hover {
+  background-color: #357ABD;
+  box-shadow: 0 2px 8px rgba(74, 144, 226, 0.3);
+}
+
+/* Friend Search */
+.friend-search {
+  padding: 1rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #999;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #4A90E2;
+  box-shadow: 0 0 5px rgba(74, 144, 226, 0.3);
+}
+
+.search-results {
+  margin-top: 0.5rem;
+  max-height: 150px;
+  overflow-y: auto;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.search-result {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  border-bottom: 1px solid #eee;
+  font-size: 0.9rem;
+}
+
+.search-result:last-child {
+  border-bottom: none;
+}
+
+.add-btn {
+  padding: 0.25rem 0.5rem;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+.add-btn:hover {
+  background-color: #45a049;
+}
+
+/* Friend List */
+.friend-list {
+  flex: 1;
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+.friend-list h3 {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: #333;
+}
+
+.friend-list ul {
+  list-style: none;
+}
+
+.friend-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem;
+  margin-bottom: 0.5rem;
+  background-color: white;
+  border-radius: 4px;
+  border-left: 3px solid #999;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.friend-item:hover {
+  background-color: #f9f9f9;
+}
+
+.friend-item.online {
+  border-left-color: #4caf50;
+}
+
+.friend-item.offline {
+  border-left-color: #999;
+  opacity: 0.7;
+}
+
+.friend-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.friend-name {
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.status-indicator {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.friend-item.online .status-indicator {
+  color: #4caf50;
+}
+
+.friend-item.offline .status-indicator {
+  color: #999;
+}
+
+.remove-btn {
+  background: none;
+  border: none;
+  color: #d32f2f;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+}
+
+.remove-btn:hover {
+  color: #b71c1c;
+}
+
+.empty {
+  text-align: center;
+  color: #999;
+  font-style: italic;
+}
+
+.loading {
+  text-align: center;
+  color: #999;
+  font-size: 0.9rem;
+}
+
+/* Chat Area */
+.chat-area {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  color: #999;
+  font-size: 1.1rem;
+  margin: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
