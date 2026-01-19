@@ -1,4 +1,4 @@
-module github.com/nio/holla/backend
+module github.com/TonyDuran/holla/backend/aimx
 
 go 1.24.0
 
